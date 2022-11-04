@@ -1,0 +1,31 @@
+.filmContainer {
+  text-align: left;
+  background-color: #E8E8E8;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+
+}
+
+p{
+  font-size: 13px;
+}
+
+.addTag{
+  text-align: right;
+}
+
+.button {
+  background-color: #277256;
+  color: white;
+  border-radius: 3px;
+  padding: 5px;
+}
+.inputField{
+  padding: 5px;
+}
