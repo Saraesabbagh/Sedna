@@ -1,12 +1,15 @@
 import React from "react";
 import "./IndexPage.css";
 import { useEffect, useState } from "react";
-import Axios from 'axios'
-import { json } from "react-router-dom";
+import { AddTag } from "../atomic/AddTag";
+
+// import Axios from "axios";
+// import { json } from "react-router-dom";
 
 export const IndexPage = () => {
   const [films, setFilms] = useState([]);
-  const [tags, setTags ] = useState([]);
+  const [tags, setTags] = useState({ ready: false });
+  // const [localStorage, setLocalStorage] = useState([]);
 
   useEffect(() => {
     fetch("https://6357f067c27556d289325a88.mockapi.io/api/v1/films")
@@ -14,9 +17,18 @@ export const IndexPage = () => {
       .then((json) => setFilms(json))
       // .then((json) => handleResponse(json))
       .catch((err) => {
-        console.log(err.message);
+        // console.log(err.message);
       });
   }, []);
+
+  
+   useEffect(() => {
+      localStorage.setItem("dataKey", JSON.stringify(tags));
+    }, [tags]);
+   
+  
+
+  console.log(localStorage);
 
   // useEffect(() => {
   //   fetchFilms();
@@ -27,13 +39,8 @@ export const IndexPage = () => {
   //     "https://6357f067c27556d289325a88.mockapi.io/api/v1/films"
   //   );
   //   setFilms(response.data);
-    
-  // };
 
-  const addTag = (event) => {
-    event.preventDefault()
-    
-  }
+  // };
 
   return (
     <div className="wholePage-container">
@@ -56,15 +63,9 @@ export const IndexPage = () => {
             <p>{film.description}</p>
             <p>{film.released}</p>
             <p>{film.tags}</p>
-            <form className="addTag" onSubmit={addTag}>
-              <input
-                className="inputField"
-                name="tag"
-                placeholder="type your tag"
-                onChange={addTag}
-              />
-              <input className="button" type="Submit" value="Add Tag" />
-            </form>
+            <AddTag film_id={film.id} setTags={setTags}/>
+            
+            
           </div>
         );
       })}
