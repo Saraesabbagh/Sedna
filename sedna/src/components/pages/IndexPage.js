@@ -2,13 +2,14 @@ import React from "react";
 import "./IndexPage.css";
 import { useEffect, useState } from "react";
 import { AddTag } from "../atomic/AddTag";
+import { InputTag } from "../atomic/InputTag";
 
 // import Axios from "axios";
 // import { json } from "react-router-dom";
 
 export const IndexPage = () => {
   const [films, setFilms] = useState([]);
-  const [tags, setTags] = useState({ ready: false });
+  // const [tags, setTags] = useState({ ready: false });
   // const [localStorage, setLocalStorage] = useState([]);
 
   useEffect(() => {
@@ -22,13 +23,13 @@ export const IndexPage = () => {
   }, []);
 
   
-   useEffect(() => {
-      localStorage.setItem("dataKey", JSON.stringify(tags));
-    }, [tags]);
+  //  useEffect(() => {
+  //     localStorage.setItem("dataKey", JSON.stringify(tags));
+  //   }, [tags]);
    
   
 
-  console.log(localStorage);
+  // console.log(localStorage);
 
   // useEffect(() => {
   //   fetchFilms();
@@ -41,6 +42,7 @@ export const IndexPage = () => {
   //   setFilms(response.data);
 
   // };
+
 
   return (
     <div className="wholePage-container">
@@ -63,7 +65,7 @@ export const IndexPage = () => {
             <p>{film.description}</p>
             <p>{film.released}</p>
             <p>{film.tags}</p>
-            <AddTag film_id={film.id} setTags={setTags}/>
+            <InputTag />
             
             
           </div>

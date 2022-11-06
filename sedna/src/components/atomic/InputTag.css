@@ -1,0 +1,27 @@
+.tags-input-container{
+  text-align: right;
+  margin-left: 10px;
+
+}
+
+.tag-item{
+  display: inline-block;
+  background-color: #0374B7;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 3px;
+  margin-right: 5px;
+  padding-top: 3px;
+  color: white;
+  border-radius: 10px;
+  font-size: 14px;
+
+}
+
+.close{
+  cursor: pointer;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bolder;
+  
+}
