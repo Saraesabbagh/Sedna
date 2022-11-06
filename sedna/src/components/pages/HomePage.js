@@ -9,9 +9,9 @@ export const HomePage = () => {
 
   // const [localStorage, setLocalStorage] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchedTag, setSearchedTag] = useState("");
-  const [filteredResults, setFilteredResults] = useState([]);
-  
+  const [searchTagsFilter, setSearchTagFilter] = useState([]);
+  // const [filteredResults, setFilteredResults] = useState([]);
+  let result = [];
 
   useEffect(() => {
     fetch("https://6357f067c27556d289325a88.mockapi.io/api/v1/films")
@@ -35,11 +35,17 @@ export const HomePage = () => {
     setTags(tags.filter((el, i) => i !== index));
   };
 
-  const search = (searchTerm)=> {
-    return films.filter((film) => tags.toLowerCase().include(searchTerm.toLowerCase()))
+  // const search = (searchTerm)=> {
+  //   return films.filter((film) => tags.toLowerCase().include(searchTerm.toLowerCase()))
+  // }
+  
+  function searchTags(ev) {
+    const searchString = ev.target.value.toLowerCase();
+    const result = films.filter(({ tags }) =>
+      tags.toLowerCase().includes(searchString)
+    );
+    setSearchTagFilter(result);
   }
-  
-  
 
 
   return (
@@ -52,9 +58,7 @@ export const HomePage = () => {
             name="searchFilms"
             placeholder="🔍 Search tags"
             value ={searchTerm}
-            onChange={(event)=> {
-              setSearchTerm(event.target.value);
-            }}
+            onChange={searchTags}
           />
     
      </span>
