@@ -9,8 +9,10 @@ import { InputTag } from "../atomic/InputTag";
 
 export const IndexPage = () => {
   const [films, setFilms] = useState([]);
-  // const [tags, setTags] = useState({ ready: false });
+  const [tags, setTags] = useState([]);
   // const [localStorage, setLocalStorage] = useState([]);
+  const [ serchTerm, setSearchTerm ] = useState("");
+  const [filteredResults, setFilteredResults] = useState([]);
 
   useEffect(() => {
     fetch("https://6357f067c27556d289325a88.mockapi.io/api/v1/films")
@@ -42,7 +44,11 @@ export const IndexPage = () => {
   //   setFilms(response.data);
 
   // };
-
+ const search = (searchTerm) => {
+   return films.filter((film) =>
+     tags.toLowerCase().include(searchTerm.toLowerCase())
+   );
+ };
 
   return (
     <div className="wholePage-container">
@@ -65,7 +71,7 @@ export const IndexPage = () => {
             <p>{film.description}</p>
             <p>{film.released}</p>
             <p>{film.tags}</p>
-            <InputTag />
+            <InputTag tags={tags} setTags={setTags}/>
             
             
           </div>

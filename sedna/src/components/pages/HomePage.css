@@ -1,0 +1,59 @@
+.filmContainer {
+  text-align: left;
+  background-color: #E8E8E8;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+
+}
+
+p{
+  font-size: 13px;
+}
+
+.addTag{
+  text-align: right;
+}
+
+.button {
+  background-color: #277256;
+  color: white;
+  border-radius: 3px;
+  padding: 5px;
+}
+.inputField{
+  padding: 5px;
+}
+
+.tags-input-container{
+  text-align: right;
+  margin-left: 10px;
+
+}
+
+.tag-item{
+  display: inline-block;
+  background-color: #0374B7;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 3px;
+  margin-right: 5px;
+  padding-top: 3px;
+  color: white;
+  border-radius: 10px;
+  font-size: 14px;
+
+}
+
+.close{
+  cursor: pointer;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bolder;
+  
+}
