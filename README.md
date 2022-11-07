@@ -15,7 +15,7 @@
 - I found if i tried to do everything on one page it go messy, but if I tried to split into components I couldn't access the information. 
 - I was only given the Api address to be able to do a GET request from. If I was able to make a POST request to change that data in the database i would have found it easier to then loop through the data. This has been the only way I have previously added data. 
 
-## Given more time what would you do
+## Given more time what would you do?
 - There is a second branch called "onePager" where i was trying to explore various solutions. Given more time I would like to achieve the following;
 - Use "setItemtoStarage" to be able to save data accross sessions. 
 - Add test coverage for what is rendering on the page and the components functionality. 
