@@ -1,6 +1,25 @@
-# Getting Started with Create React App
+# Sedna Tech Challenge <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Fetch data from given Api and render it on the page in a list, styled as the design called for. 
+- All the user to input up to 5 tags per film, these can be removed but not edited. 
+- Allow user to search through films by using tags
+- Maintain information accross sessions.
+
+## Plan
+- I used excalidraw to spend some time drawing out the compenents and sketch out a rough plan. 
+- The link to this can be found here- https://excalidraw.com/#room=c9a09bdb5a7ab88be787,97glCC4W8N3cSn0Z76FSZQ
+<img src="./sednaPlan.png">
+
+## Challenges
+- Despite given time I was not able to find a solution for searching through tags. 
+- I found if i tried to do everything on one page it go messy, but if I tried to split into components I couldn't access the information. 
+- I was only given the Api address to be able to do a GET request from. If I was able to make a POST request to change that data in the database i would have found it easier to then loop through the data. This has been the only way I have previously added data. 
+
+## Given more time what would you do
+- There is a second branch called "onePager" where i was trying to explore various solutions. Given more time I would like to achieve the following;
+- Use "setItemtoStarage" to be able to save data accross sessions. 
+- Add test coverage for what is rendering on the page and the components functionality. 
+- Find out a way to take the array of films, add a tags array to each film object, and then be able to search through the tags, inside the film array rather than its own standalone array. 
 
 ## Available Scripts
 
